@@ -35,39 +35,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="344dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:background="@color/primario"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tituloSeccion">
-
-        <Spinner
-            android:id="@+id/spinnerClases"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:backgroundTint="@color/primario_light"
-            android:popupBackground="@color/secundario"
-            android:divider="@drawable/e_m_3"
-            />
-    </LinearLayout>
-
     <ImageView
         android:id="@+id/imagenIcono"
         android:layout_width="251dp"
         android:layout_height="236dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:srcCompat="@drawable/human"
+        app:layout_constraintTop_toBottomOf="@+id/btnElegirClase"
         app:tint="@color/primario" />
+
     <TextView
         android:id="@+id/tituloSeccion2"
         android:layout_width="0dp"
@@ -135,6 +112,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/btnElegirClase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Elegir clase"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloSeccion" />
+
+    <TextView
+        android:id="@+id/lbNombreClase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/primario_light"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imagenfondo"
+        app:layout_constraintTop_toBottomOf="@+id/imagenIcono" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

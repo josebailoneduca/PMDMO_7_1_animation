@@ -2,6 +2,7 @@ package com.example.rpgjjbo;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
@@ -23,6 +24,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.nio.file.Files;
@@ -42,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Adap
      * Almacena el personaje que se va configurando conforme se avanzan en las pantallas
      */
     private Personaje personaje;
+    ActivityResultLauncher<Intent> lanzadorSelectorClase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +58,24 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Adap
         //gestion del boton de inicio
         Button btnInicio = findViewById(R.id.btnInicio);
         btnInicio.setOnClickListener(view -> elijeClase());
+
+        //Lanzador de actividad de seleccion de clase
+
+        lanzadorSelectorClase = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == Activity.RESULT_OK) {
+                            // There are no request codes
+                            Intent data = result.getData();
+                            //TODO gestionar resultado actividad
+                        }
+                    }
+                });
+
+
+
     }
 
     // ELEGIR CLASE
@@ -59,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Adap
      * Entrada en la pantalla de seleccion de clase de personaje y genero
      */
     private void elijeClase() {
-        //inicializacion del personaje  asdf
+        //inicializacion del personaje
         this.personaje = new Personaje();
         //carga del layout
         setContentView(R.layout.elegir_clase);
@@ -67,21 +92,28 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Adap
         //referencias a elementos de interface
         Button btnClaseContinuar = findViewById(R.id.btnRasgosContinuar);
         RadioGroup radioGroupGenero = findViewById(R.id.radioGroupGenero);
-        Spinner spinnerClases = findViewById(R.id.spinnerClases);
+        Button btnElegirClase = findViewById(R.id.btnElegirClase);
+       // Spinner spinnerClases = findViewById(R.id.spinnerClases);
         ImageView iconoClase = findViewById(R.id.imagenIcono);
         //inicializacion de GUI
         //definicion del spinner
         ClasesArrayAdapter adaptador = new ClasesArrayAdapter(this, R.layout.list_classes_item, EnumClassType.values());
         adaptador.setDropDownViewResource(R.layout.list_classes_item_dropdown);
-        spinnerClases.setAdapter(adaptador);
+        //spinnerClases.setAdapter(adaptador);
         //icono de clase
-        iconoClase.setOnClickListener(view -> spinnerClases.performClick());
+        //iconoClase.setOnClickListener(view -> spinnerClases.performClick());
         //radiobuttons de genero
         radioGroupGenero.clearCheck();
         btnClaseContinuar.setEnabled(false);
 
         //evento de cambio de clase
-        spinnerClases.setOnItemSelectedListener(this);
+        btnElegirClase.setOnClickListener(view ->{
+                    Intent intent = new Intent(this, SelectorClaseActivity.class);
+                    lanzadorSelectorClase.launch(intent);
+    }
+                );
+        //spinnerClases.setOnItemSelectedListener(this);
+
 
         //evento de cambio de genero
         radioGroupGenero.setOnCheckedChangeListener((radioGroup, i) -> {
