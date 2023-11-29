@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/fondoNombre"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/fondo2"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/tituloSeccion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/turquesaTransparente"
+        android:fontFamily="@font/meat"
+        android:padding="10dp"
+        android:text="@string/nombre_y_descripcion"
+        android:textAlignment="center"
+        android:textColor="@color/primario_light"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutAvatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloSeccion">
+
+        <ImageButton
+            android:id="@+id/btnAvatarAnterior"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/avatar_anterior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_media_previous"
+            app:tint="@color/primario_light" />
+
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/avatar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnAvatarPosterior"
+            app:layout_constraintStart_toEndOf="@+id/btnAvatarAnterior"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.428"
+            app:srcCompat="@drawable/h_m_1" />
+
+        <ImageButton
+            android:id="@+id/btnAvatarPosterior"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/siguiente_avatar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.496"
+            app:srcCompat="@android:drawable/ic_media_next"
+            app:tint="@color/primario_light" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:padding="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnNombreContinuar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/fondoNombre"
+        app:layout_constraintTop_toBottomOf="@+id/layoutAvatar">
+
+        <TextView
+            android:id="@+id/lbNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/meat_f"
+            android:text="@string/elije_un_nombre"
+            android:textColor="@color/primario_light"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/inputNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#7EFFFFFF"
+            android:ems="10"
+            android:hint="@string/elije_un_nombre"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLength="20"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbNombre" />
+
+        <TextView
+            android:id="@+id/lbDescripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/meat_f"
+            android:text="@string/descripcion"
+            android:textColor="@color/primario_light"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputNombre" />
+
+        <EditText
+            android:id="@+id/inputDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#7EFFFFFF"
+            android:ems="10"
+            android:hint="@string/descripcion"
+            android:imeOptions="actionDone"
+            android:inputType="textMultiLine"
+            android:isScrollContainer="true"
+            android:lines="4"
+            android:maxLength="140"
+            android:maxLines="4"
+            android:padding="10dp"
+            android:scrollHorizontally="false"
+            android:singleLine="false"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbDescripcion"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/lbCharRestantes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="(140)"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/lbDescripcion"
+            app:layout_constraintStart_toEndOf="@+id/lbDescripcion"
+            app:layout_constraintTop_toTopOf="@+id/lbDescripcion" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnNombreContinuar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:enabled="false"
+        android:text="@string/continuar"
+        app:icon="@android:drawable/ic_media_play"
+        app:iconGravity="textEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

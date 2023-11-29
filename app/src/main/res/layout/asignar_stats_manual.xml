@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imagenfondo"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fondo2"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tituloSeccion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/turquesaTransparente"
+        android:fontFamily="@font/meat"
+        android:padding="10dp"
+        android:text="@string/caracter_sticas_manuales"
+        android:textAlignment="center"
+        android:textColor="@color/primario_light"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/explicacionSeccion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/turquesaTransparente"
+        android:fontFamily="@font/meat"
+        android:maxLines="2"
+        android:padding="10dp"
+        android:text="@string/explicacion_caract_manuales"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tituloSeccion" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/statsLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/filaPuntosrestante"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/explicacionSeccion">
+
+
+    <!--SALUD-->
+        <LinearLayout
+            android:id="@+id/filaSalud"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/turquesaTransparente"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextSizeCheck">
+
+            <ImageView
+                android:id="@+id/icoSalud"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_weight="0"
+                android:contentDescription="@string/salud"
+                app:srcCompat="@drawable/salud"
+                app:tint="@color/primario_light" />
+        <LinearLayout
+            android:id="@+id/subfilaSalud"
+            android:layout_height="48dp"
+            android:background="@color/turquesaTransparente"
+            android:orientation="vertical"
+            android:layout_weight="@integer/material_motion_duration_long_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextSizeCheck" android:layout_width="0dp">
+
+            <TextView
+                android:id="@+id/lbSalud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:text="@string/salud"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                tools:ignore="RtlSymmetry" />
+
+            <ProgressBar
+                android:id="@+id/progressBarSalud"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="25"
+                android:progress="0"
+                android:progressBackgroundTint="@color/rojo"
+                android:progressTint="@color/verde_claro" />
+        </LinearLayout>
+
+            <TextView
+                android:id="@+id/lbValSalud"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:padding="1dp"
+                android:text="0"
+                android:textColor="@color/design_default_color_secondary"
+                android:textSize="24sp"
+                tools:ignore="HardcodedText,RtlSymmetry" />
+
+
+            <ImageButton
+                android:id="@+id/btnStatSalud"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_weight="0"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/sumar_punto"
+                app:srcCompat="@android:drawable/ic_menu_add"
+                app:tint="@color/verde_claro"
+                />
+        </LinearLayout>
+    <!--FIN SALUD-->
+        <!--ATAQUE FISICO-->
+        <LinearLayout
+            android:id="@+id/filaAtaqueFisico"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/turquesaTransparente"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filaSalud"
+            tools:ignore="TextSizeCheck">
+
+            <ImageView
+                android:id="@+id/icoAtaqueFisico"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+
+                android:layout_weight="0"
+                android:contentDescription="@string/ataque_fisico"
+                app:srcCompat="@drawable/ataque_fisico"
+                app:tint="@color/primario_light" />
+
+            <LinearLayout
+                android:id="@+id/subfilaAtaqueFisico"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="@integer/material_motion_duration_long_1"
+                android:background="@color/turquesaTransparente"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextSizeCheck">
+
+                <TextView
+                    android:id="@+id/lbAtaqueFisico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="1dp"
+                    android:text="@string/ataque_fisico"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    tools:ignore="RtlSymmetry" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarAtaqueFisico"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="25"
+                    android:progress="0"
+                    android:progressBackgroundTint="@color/rojo"
+                    android:progressTint="@color/verde_claro" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lbValAtaqueFisico"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:padding="1dp"
+                android:text="0"
+                android:textColor="@color/design_default_color_secondary"
+                android:textSize="24sp"
+                tools:ignore="HardcodedText,RtlSymmetry" />
+
+
+            <ImageButton
+                android:id="@+id/btnStatAtaqueFisico"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_weight="0"
+                android:background="@android:color/transparent"
+                app:srcCompat="@android:drawable/ic_menu_add"
+                app:tint="@color/verde_claro"
+                android:contentDescription="@string/sumar_punto" />
+        </LinearLayout>
+        <!--FIN ATAQUE FISICO-->
+        <!--ATAQUE MAGICO-->
+        <LinearLayout
+            android:id="@+id/filaAtaqueMagico"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/turquesaTransparente"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filaAtaqueFisico"
+            tools:ignore="TextSizeCheck">
+
+            <ImageView
+                android:id="@+id/icoAtaqueMagico"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+
+                android:layout_weight="0"
+                android:contentDescription="@string/ataque_magico"
+                app:srcCompat="@drawable/ataque_magico"
+                app:tint="@color/primario_light" />
+            <LinearLayout
+                android:id="@+id/subfilaAtaqueMagico"
+                android:layout_height="48dp"
+                android:background="@color/turquesaTransparente"
+                android:orientation="vertical"
+                android:layout_weight="@integer/material_motion_duration_long_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextSizeCheck" android:layout_width="0dp">
+
+                <TextView
+                    android:id="@+id/lbAtaqueMagico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="1dp"
+                    android:text="@string/ataque_magico"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    tools:ignore="RtlSymmetry" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarAtaqueMagico"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="25"
+                    android:progress="0"
+                    android:progressBackgroundTint="@color/rojo"
+                    android:progressTint="@color/verde_claro" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lbValAtaqueMagico"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:padding="1dp"
+                android:text="0"
+                android:textColor="@color/design_default_color_secondary"
+                android:textSize="24sp"
+                tools:ignore="HardcodedText,RtlSymmetry" />
+
+
+            <ImageButton
+                android:id="@+id/btnStatAtaqueMagico"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_weight="0"
+                android:background="@android:color/transparent"
+                app:srcCompat="@android:drawable/ic_menu_add"
+                app:tint="@color/verde_claro"
+                android:contentDescription="@string/sumar_punto" />
+        </LinearLayout>
+        <!--FIN ATAQUE MAGICO-->
+        <!--DEFENSA FISICA-->
+        <LinearLayout
+            android:id="@+id/filaDefensaFisica"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/turquesaTransparente"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filaAtaqueMagico"
+            tools:ignore="TextSizeCheck">
+
+            <ImageView
+                android:id="@+id/icoDefensaFisica"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+
+                android:layout_weight="0"
+                android:contentDescription="@string/defensa_fisica"
+                app:srcCompat="@drawable/defensa_fisica"
+                app:tint="@color/primario_light" />
+            <LinearLayout
+                android:id="@+id/subfilaDefensaFisica"
+                android:layout_height="48dp"
+                android:background="@color/turquesaTransparente"
+                android:orientation="vertical"
+                android:layout_weight="@integer/material_motion_duration_long_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextSizeCheck" android:layout_width="0dp">
+
+                <TextView
+                    android:id="@+id/lbDefensaFisica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="1dp"
+
+                    android:text="@string/defensa_fisica"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    tools:ignore="RtlSymmetry" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarDefensaFisica"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="25"
+                    android:progress="0"
+                    android:progressBackgroundTint="@color/rojo"
+                    android:progressTint="@color/verde_claro" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lbValDefensaFisica"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:padding="1dp"
+                android:text="0"
+                android:textColor="@color/design_default_color_secondary"
+                android:textSize="24sp"
+                tools:ignore="HardcodedText,RtlSymmetry" />
+
+
+            <ImageButton
+                android:id="@+id/btnStatDefensaFisica"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_weight="0"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/sumar_punto"
+                app:srcCompat="@android:drawable/ic_menu_add"
+                app:tint="@color/verde_claro" />
+        </LinearLayout>
+        <!--FIN DEFENSA FISICA-->
+        <!--DEFENSA MAGICA-->
+        <LinearLayout
+            android:id="@+id/filaDefensaMagica"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/turquesaTransparente"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filaDefensaFisica"
+            tools:ignore="TextSizeCheck">
+
+            <ImageView
+                android:id="@+id/icoDefensaMagica"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+
+                android:layout_weight="0"
+                android:contentDescription="@string/defensa_magica"
+                app:srcCompat="@drawable/defensa_magica"
+                app:tint="@color/primario_light" />
+            <LinearLayout
+                android:id="@+id/subfilaDefensaMagica"
+                android:layout_height="48dp"
+                android:background="@color/turquesaTransparente"
+                android:orientation="vertical"
+                android:layout_weight="@integer/material_motion_duration_long_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextSizeCheck" android:layout_width="0dp">
+
+                <TextView
+                    android:id="@+id/lbDefensaMagica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="1dp"
+                    android:text="@string/defensa_magica"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    tools:ignore="RtlSymmetry" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarDefensaMagica"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="25"
+                    android:progress="0"
+                    android:progressBackgroundTint="@color/rojo"
+                    android:progressTint="@color/verde_claro" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lbValDefensaMagica"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:padding="1dp"
+                android:text="0"
+                android:textColor="@color/design_default_color_secondary"
+                android:textSize="24sp"
+                tools:ignore="HardcodedText,RtlSymmetry" />
+
+
+            <ImageButton
+                android:id="@+id/btnStatDefensaMagica"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_weight="0"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/sumar_punto"
+                app:srcCompat="@android:drawable/ic_menu_add"
+                app:tint="@color/verde_claro" />
+        </LinearLayout>
+        <!--FIN DEFENSA MAGICA-->
+        <!--PUNTERIA-->
+        <LinearLayout
+            android:id="@+id/filaPunteria"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/turquesaTransparente"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filaDefensaMagica"
+            tools:ignore="TextSizeCheck">
+
+            <ImageView
+                android:id="@+id/icoPunteria"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+
+                android:layout_weight="0"
+                android:contentDescription="@string/punteria"
+                app:srcCompat="@drawable/punteria"
+                app:tint="@color/primario_light" />
+            <LinearLayout
+                android:id="@+id/subfilaPunteria"
+                android:layout_height="48dp"
+                android:background="@color/turquesaTransparente"
+                android:orientation="vertical"
+                android:layout_weight="@integer/material_motion_duration_long_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextSizeCheck" android:layout_width="0dp">
+
+                <TextView
+                    android:id="@+id/lbPunteria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="1dp"
+                    android:text="@string/punteria"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    tools:ignore="RtlSymmetry" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarPunteria"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="25"
+                    android:progress="0"
+                    android:progressBackgroundTint="@color/rojo"
+                    android:progressTint="@color/verde_claro" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lbValPunteria"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:padding="1dp"
+                android:text="0"
+                android:textColor="@color/design_default_color_secondary"
+                android:textSize="24sp"
+                tools:ignore="HardcodedText,RtlSymmetry" />
+
+
+            <ImageButton
+                android:id="@+id/btnStatPunteria"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_weight="0"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/sumar_punto"
+                app:srcCompat="@android:drawable/ic_menu_add"
+                app:tint="@color/verde_claro" />
+        </LinearLayout>
+        <!--FIN PUNTERIA-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filaPuntosrestante"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+        android:layout_marginBottom="20dp"
+        android:background="@color/turquesaTransparente"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/btnStatsManualContinuar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextSizeCheck">
+
+        <LinearLayout
+            android:id="@+id/filaTiradasCentrador"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+
+            android:background="@color/turquesaTransparente"
+
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextSizeCheck">
+
+            <TextView
+                android:id="@+id/lbTiradas"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="1dp"
+                android:paddingStart="20dp"
+                android:text="@string/puntos_restantes"
+                android:textAlignment="viewStart"
+                android:textColor="@color/primario"
+                android:textSize="24sp"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/lbValPuntosRestantes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:padding="1dp"
+
+                android:text="10"
+                android:textAlignment="center"
+                android:textColor="@color/primario_light"
+                android:textSize="24sp"
+                tools:ignore="HardcodedText,RtlSymmetry" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <Button
+        android:id="@+id/btnStatsManualContinuar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:enabled="true"
+        android:text="@string/continuar"
+        app:icon="@android:drawable/ic_media_play"
+        app:iconGravity="textEnd"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

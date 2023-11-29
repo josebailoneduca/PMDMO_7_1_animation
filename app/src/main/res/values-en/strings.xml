@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">RPG JJBO</string>
+    <!-- general -->
+    <string name="continuar">Continue</string>
+    <!-- intro-->
+    <string name="comenzar">Start</string>
+    <!-- seleccion de clase -->
+    <string name="selecciona_clase">Selecct a Class</string>
+    <string name="selecciona_genero">Selecct a Gender</string>
+    <string name="debes_elegir_una_clase">You must choose a class</string>
+    <string name="debes_elegir_un_genero">You must select a gender</string>
+    <!--razas y generos-->
+    <string name="humano">Human</string>
+    <string name="elfo">Elf</string>
+    <string name="enano">Dwarf</string>
+    <string name="orco">Orc</string>
+    <string name="femenino">Femenine</string>
+    <string name="masculino">Masculine</string>
+    <!-- traits -->
+    <string name="berserker">Berserker</string>
+    <string name="berserker_desc">Automatically attacks without receiving orders from the player.</string>
+    <string name="cauteloso">Caution</string>
+    <string name="cauteloso_desc">Cautious to the point of cowardice which causes him to suffer less damage in combat.</string>
+    <string name="conductor_otto">Otto Driver</string>
+    <string name="conductor_otto_desc">Mana and life recovery potions are more effective.</string>
+    <string name="concentrado">Concentration</string>
+    <string name="concentrado_desc">Concentration increases attack speed and aim.</string>
+    <string name="honesto">Honesty</string>
+    <string name="honesto_desc">Better quest rewards and lower prices in the clan store.</string>
+    <string name="rapido">Speed</string>
+    <string name="rapido_desc">Its gazelle feet allow it to walk and attack faster.</string>
+    <string name="musculoso">Muscular</string>
+    <string name="musculoso_desc">Anything that requires strength you will be good at it.</string>
+    <string name="empollon">Nerd</string>
+    <string name="empollon_desc">Take advantage of actions to gain much more experience</string>
+    <!--stats-->
+    <string name="caracter_sticas_aleatorias">Random Stats</string>
+    <string name="ataque_magico">Magic Attack</string>
+    <string name="defensa_fisica">Physical Defense</string>
+    <string name="punteria">Aim</string>
+    <string name="ataque_fisico">Physical Attack</string>
+    <string name="defensa_magica">Magic Defense</string>
+    <string name="salud">Health</string>
+    <string name="caracter_sticas_manuales">Manual Stats</string>
+    <string name="tiradas_restantes">Remaining rolls:</string>
+    <string name="lanzar_dados">Roll Dices</string>
+    <string name="explicacion_caract_manuales">Assign points to the stats you want\n(Maximum 25)</string>
+    <string name="puntos_restantes">Remaining Points:</string>
+    <string name="sumar_punto">Add point</string>
+    <!--nombre biografia y avatar-->
+    <string name="nombre_y_descripcion">Name and Biography</string>
+    <string name="elije_un_nombre">Choose a name</string>
+    <string name="descripcion">Biography</string>
+    <string name="siguiente_avatar">Next avatar</string>
+    <string name="avatar_anterior">Previous avatar</string>
+    <!--rasgos del personaje-->
+    <string name="selecciona_3_rasgos_para_el_personaje">Select 3 traits for the character</string>
+    <string name="informacion">Information</string>
+    <string name="selecciona_rasgos">Select Traits</string>
+    <string name="avatar">Avatar</string>
+    <!--ficha de personaje-->
+    <string name="crear_nuevo_personaje">Crearte new character</string>
+    <string name="crear_nuevo">Create new</string>
+    <string name="explicacion_caract_aleatoria">Tap the Roll Dices button to set up the stats.</string>
+    <string name="human_desc">Humans are gregarious and willing to mix and interact with others</string>
+    <string name="elf_desc">An elf is a creature that\'s said to be magical, and a little mischievous</string>
+    <string name="dwarf_desc">Are determined and loyal, true to their word and decisive in action</string>
+    <string name="orc_desc">Orcs are savage humanoids with green skin and a brutish appearance</string>
+    <string name="ataque">Attack</string>
+</resources>

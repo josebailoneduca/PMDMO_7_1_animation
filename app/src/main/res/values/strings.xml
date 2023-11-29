@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">RPG JJBO</string>
+    <!-- general -->
+    <string name="continuar">Continuar</string>
+    <!-- intro-->
+    <string name="comenzar">Comenzar</string>
+    <!-- seleccion de clase -->
+    <string name="selecciona_clase">Selecciona una Clase</string>
+    <string name="selecciona_genero">Selecciona un Género</string>
+    <string name="debes_elegir_una_clase">Debes elegir una clase</string>
+    <!--razas y generos-->
+    <string name="humano">Humano</string>
+    <string name="elfo">Elfo</string>
+    <string name="enano">Enano</string>
+    <string name="orco">Orco</string>
+    <string name="femenino">Femenino</string>
+    <string name="masculino">Masculino</string>
+    <!-- traits -->
+    <string name="berserker">Berserker</string>
+    <string name="berserker_desc">Atacará automaticamentes sin recibir ordenes del jugador.</string>
+    <string name="cauteloso">Cautela</string>
+    <string name="cauteloso_desc">Cautela al punto de cobardía lo que le hace sufrir menos daño en combate</string>
+    <string name="conductor_otto">Conductor Otto</string>
+    <string name="conductor_otto_desc">Las pociones de recuperacion de maná y vida son más efectivas.</string>
+    <string name="concentrado">Concentración</string>
+    <string name="concentrado_desc">Su concentración incrementa la velocidad de ataque y la puntería.</string>
+    <string name="honesto">Honestidad</string>
+    <string name="honesto_desc">Mejores recompensas en las misiones y menores precios en la tienda del clan.</string>
+    <string name="rapido">Rápidez</string>
+    <string name="rapido_desc">Sus pies de gacela le permiten andar y atacar más rápido.</string>
+    <string name="musculoso">Musculoso</string>
+    <string name="musculoso_desc">Cualquier cosa que requiera fuerza se le dará bien</string>
+    <string name="empollon">Empollón</string>
+    <string name="empollon_desc">Aprovecha las acciones para ganar mucha más experiencia</string>
+    <!--stats-->
+    <string name="caracter_sticas_aleatorias">Características Aleatorias</string>
+    <string name="ataque_magico">Ataque Mágico</string>
+    <string name="defensa_fisica">Defensa Física</string>
+    <string name="punteria">Puntería</string>
+    <string name="ataque_fisico">Ataque Físico</string>
+    <string name="defensa_magica">Defensa Mágica</string>
+    <string name="salud">Salud</string>
+    <string name="caracter_sticas_manuales">Características Manuales</string>
+    <string name="tiradas_restantes">Tiradas restantes:</string>
+    <string name="lanzar_dados">Lanzar Dados</string>
+    <string name="explicacion_caract_manuales">Asigna puntos a las características que quieras\n(Máximo 25)</string>
+    <string name="puntos_restantes">Puntos restantes:</string>
+    <string name="sumar_punto">Sumar punto</string>
+    <string name="debes_elegir_un_genero">Debes elegir un género\n</string>
+    <string name="nombre_y_descripcion">Nombre y Biografía</string>
+    <string name="elije_un_nombre">Elije un nombre</string>
+    <string name="descripcion">Biografia</string>
+    <string name="siguiente_avatar">Siguiente avatar</string>
+    <string name="avatar_anterior">Avatar anterior</string>
+    <string name="selecciona_3_rasgos_para_el_personaje">Selecciona 3 rasgos para el personaje</string>
+    <string name="informacion">Informacion</string>
+    <string name="selecciona_rasgos">Selecciona Rasgos</string>
+    <string name="avatar">Avatar</string>
+    <string name="crear_nuevo_personaje">Crear nuevo personaje</string>
+    <string name="crear_nuevo">Crear nuevo</string>
+    <string name="explicacion_caract_aleatoria">Pulsa el botón de lanzar dados para ajustar las características.</string>
+    <string name="human_desc">Los humanos son gregarios y gustan de mezclarse e interactuar con otros</string>
+    <string name="elf_desc">Un elfo es una criatura que se dice que es mágica y un poco traviesa</string>
+    <string name="dwarf_desc">Son valientes y leales, fieles a su palabra y decididos en la acción</string>
+    <string name="orc_desc">Los orcos son humanoides salvajes con piel verde y apariencia brutal</string>
+    <string name="ataque">Ataque</string>
+</resources>

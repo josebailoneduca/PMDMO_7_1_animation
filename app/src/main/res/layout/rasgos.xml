@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imagenfondo"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fondo2"
+        android:importantForAccessibility="no" />
+
+    <TextView
+        android:id="@+id/tituloSeccion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#CC001926"
+        android:fontFamily="@font/meat"
+        android:padding="10dp"
+        android:text="@string/selecciona_rasgos"
+        android:textAlignment="center"
+        android:textColor="@color/primario_light"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/explicacionSeccion2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/turquesaTransparente"
+        android:fontFamily="@font/meat"
+        android:gravity="center_horizontal|center_vertical"
+        android:maxLines="2"
+        android:padding="10dp"
+        android:text="@string/selecciona_3_rasgos_para_el_personaje"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloSeccion" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/btnRasgosContinuar"
+        app:layout_constraintEnd_toEndOf="@+id/imagenfondo"
+        app:layout_constraintStart_toStartOf="@+id/imagenfondo"
+        app:layout_constraintTop_toBottomOf="@+id/explicacionSeccion2">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#7C074051"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+                <CheckBox
+                    android:id="@+id/inputBerserker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/berserker"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    app:centerIfNoTextEnabled="true" />
+
+                <ImageButton
+                    android:id="@+id/btnInfoBerserker"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/informacion"
+                    android:src="@android:drawable/ic_dialog_info"
+                    app:tint="#00BCD4" />
+
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+                <CheckBox
+                    android:id="@+id/inputCauteloso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/cauteloso"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <ImageButton
+                    android:id="@+id/btnInfoCauteloso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/informacion"
+                    android:src="@android:drawable/ic_dialog_info"
+                    app:tint="#00BCD4" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+                <CheckBox
+                    android:id="@+id/inputConductorOtto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/conductor_otto"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <ImageButton
+                    android:id="@+id/btnInfoConductorOtto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/informacion"
+
+                    android:src="@android:drawable/ic_dialog_info"
+                    app:tint="#00BCD4" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+                <CheckBox
+                    android:id="@+id/inputConcentrado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/concentrado"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"/>
+
+                <ImageButton
+                    android:id="@+id/btnInfoConcentrado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/informacion"
+                    android:src="@android:drawable/ic_dialog_info"
+                    app:tint="#00BCD4" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+                <CheckBox
+                    android:id="@+id/inputHonesto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/honesto"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"/>
+
+                <ImageButton
+                    android:id="@+id/btnInfoHonesto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:contentDescription="@string/informacion"
+                    android:background="@android:color/transparent"
+                    android:src="@android:drawable/ic_dialog_info"
+                    app:tint="#00BCD4" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+                <CheckBox
+                    android:id="@+id/inputRapido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rapido"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"/>
+
+                <ImageButton
+                    android:id="@+id/btnInfoRapido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:contentDescription="@string/informacion"
+                    android:background="@android:color/transparent"
+                    android:src="@android:drawable/ic_dialog_info"
+                    app:tint="#00BCD4" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+                <CheckBox
+                    android:id="@+id/inputMusculoso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/musculoso"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"/>
+
+                <ImageButton
+                    android:id="@+id/btnInfoMusucloso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:contentDescription="@string/informacion"
+                    android:background="@android:color/transparent"
+                    android:src="@android:drawable/ic_dialog_info"
+                    app:tint="#00BCD4" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+                <CheckBox
+                    android:id="@+id/inputEmpollon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empollon"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"/>
+
+                <ImageButton
+                    android:id="@+id/btnInfoEmpollon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:contentDescription="@string/informacion"
+                    android:background="@android:color/transparent"
+                    android:src="@android:drawable/ic_dialog_info"
+                    app:tint="#00BCD4" />
+            </TableRow>
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <Button
+        android:id="@+id/btnRasgosContinuar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:enabled="true"
+        android:text="@string/continuar"
+        app:icon="@android:drawable/ic_media_play"
+        app:iconGravity="textEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

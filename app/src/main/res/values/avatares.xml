@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="avatares">
+        <!--humano-->
+        <item>@drawable/h_m_1</item>
+        <item>@drawable/h_m_2</item>
+        <item>@drawable/h_m_3</item>
+        <item>@drawable/h_m_4</item>
+        <!--humana-->
+        <item>@drawable/h_f_1</item>
+        <item>@drawable/h_f_2</item>
+        <item>@drawable/h_f_3</item>
+        <item>@drawable/h_f_4</item>
+        <!--elfo-->
+        <item>@drawable/e_m_1</item>
+        <item>@drawable/e_m_2</item>
+        <item>@drawable/e_m_3</item>
+        <item>@drawable/e_m_4</item>
+        <!--elfa-->
+        <item>@drawable/e_f_1</item>
+        <item>@drawable/e_f_2</item>
+        <item>@drawable/e_f_3</item>
+        <item>@drawable/e_f_4</item>
+        <!--enano-->
+        <item>@drawable/d_m_1</item>
+        <item>@drawable/d_m_2</item>
+        <item>@drawable/d_m_3</item>
+        <item>@drawable/d_m_4</item>
+        <!--enana-->
+        <item>@drawable/d_f_1</item>
+        <item>@drawable/d_f_2</item>
+        <item>@drawable/d_f_3</item>
+        <item>@drawable/d_f_4</item>
+        <!--orco-->
+        <item>@drawable/o_m_1</item>
+        <item>@drawable/o_m_2</item>
+        <item>@drawable/o_m_3</item>
+        <item>@drawable/o_m_4</item>
+        <!--orca-->
+        <item>@drawable/o_f_1</item>
+        <item>@drawable/o_f_2</item>
+        <item>@drawable/o_f_3</item>
+        <item>@drawable/o_f_4</item>
+
+    </array>
+</resources>
