@@ -50,7 +50,7 @@ public class ClasesArrayAdapter extends ArrayAdapter<EnumClassType> {
         LayoutInflater inflador= LayoutInflater.from(context);
         View vFila = inflador.inflate(dropdownItemLayout,parent,false);
         ((TextView)vFila.findViewById(R.id.nombre)).setText(clases[position].getNombre());
-        ((ImageView) vFila.findViewById(R.id.imagenIcono)).setImageResource(clases[position].getImagen());
+        ((ImageView) vFila.findViewById(R.id.imagenIconoClase)).setImageResource(clases[position].getImagen());
         RatingBar rbVida=(RatingBar) vFila.findViewById(R.id.ratingSalud);
         rbVida.setMax(5);
         rbVida.setProgress(clases[position].getVida());

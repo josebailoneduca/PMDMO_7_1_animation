@@ -8,29 +8,23 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.nio.file.Files;
 import java.util.ArrayList;
 
 /**
@@ -41,13 +35,13 @@ import java.util.ArrayList;
  *
  * @author Jose J. Bailon Ortiz
  */
-public class MainActivity extends AppCompatActivity implements TextWatcher, AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements TextWatcher {
 
     /**
      * Almacena el personaje que se va configurando conforme se avanzan en las pantallas
      */
     private Personaje personaje;
-    ActivityResultLauncher<Intent> lanzadorSelectorClase;
+    ActivityResultLauncher<EnumClassType> lanzadorSelectorClase;
 
 
     @Override
@@ -60,23 +54,14 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Adap
         btnInicio.setOnClickListener(view -> elijeClase());
 
         //Lanzador de actividad de seleccion de clase
-
         lanzadorSelectorClase = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                new ActivityResultCallback<ActivityResult>() {
-                    @Override
-                    public void onActivityResult(ActivityResult result) {
-                        if (result.getResultCode() == Activity.RESULT_OK) {
-                            // There are no request codes
-                            Intent data = result.getData();
-                            //TODO gestionar resultado actividad
-                        }
-                    }
+                new ElegirClaseResultContract(),
+                (result) -> {
+                    manejarResultadoAcitivityClase(result);
                 });
-
-
-
     }
+
+
 
     // ELEGIR CLASE
 
@@ -94,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Adap
         RadioGroup radioGroupGenero = findViewById(R.id.radioGroupGenero);
         Button btnElegirClase = findViewById(R.id.btnElegirClase);
        // Spinner spinnerClases = findViewById(R.id.spinnerClases);
-        ImageView iconoClase = findViewById(R.id.imagenIcono);
+        ImageView iconoClase = findViewById(R.id.imagenIconoClase);
         //inicializacion de GUI
         //definicion del spinner
         ClasesArrayAdapter adaptador = new ClasesArrayAdapter(this, R.layout.list_classes_item, EnumClassType.values());
@@ -108,11 +93,8 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Adap
 
         //evento de cambio de clase
         btnElegirClase.setOnClickListener(view ->{
-                    Intent intent = new Intent(this, SelectorClaseActivity.class);
-                    lanzadorSelectorClase.launch(intent);
-    }
-                );
-        //spinnerClases.setOnItemSelectedListener(this);
+            lanzadorSelectorClase.launch(personaje.getClase());
+        });
 
 
         //evento de cambio de genero
@@ -143,6 +125,22 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Adap
             statsAleatoria();
         });
     }
+
+
+    /**
+     * Maneja el resultado devuelto por la actividad de seleccion de clase
+     * @param clase La clase seleccionada
+     */
+    private void manejarResultadoAcitivityClase(EnumClassType clase) {
+        if (clase!=null) {
+            personaje.setClase(clase);
+            ((ImageView)findViewById(R.id.imagenIconoClase)).setImageResource(personaje.getClase().imagen);
+            ((TextView)findViewById(R.id.lbNombreClase)).setText(personaje.getClase().getNombre());
+        }
+    }
+
+
+
 
     //STATS ALEATORIOS
 
@@ -576,20 +574,5 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Adap
 
     }
 
-    /**
-     * Gestion de spinner de clase. Segun el indice i recoge el valor de EnumClassType
-     * y lo agrega como clase al personaje. Ademas modifica el icono segun ese EnumClasstype
-     */
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        int claseSeleccionada = i;
-        ImageView iconoClase = findViewById(R.id.imagenIcono);
-        this.personaje.setClase(EnumClassType.values()[i]);
-        iconoClase.setImageResource(EnumClassType.values()[i].getImagen());
-    }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
 }

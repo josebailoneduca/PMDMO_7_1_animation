@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 public class SelectorClaseActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
@@ -19,17 +18,20 @@ public class SelectorClaseActivity extends AppCompatActivity implements AdapterV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.elegir_clase_activity);
+        claseSeleccionada = (EnumClassType)getIntent().getExtras().get("CLASE_ACTUAL");
+        eligeClase();
+
     }
 
 
-
-
-    private void elijeClase() {
+    private void eligeClase() {
 
         //referencias a elementos de interface
         Button btnClaseContinuar = findViewById(R.id.btnRasgosContinuar);
         Spinner spinnerClases = findViewById(R.id.spinnerClases);
-        ImageView iconoClase = findViewById(R.id.imagenIcono);
+        ImageView iconoClase = findViewById(R.id.imagenIconoClase);
+        if (claseSeleccionada!=null)
+            iconoClase.setImageResource(claseSeleccionada.getImagen());
         //inicializacion de GUI
         //definicion del spinner
         ClasesArrayAdapter adaptador = new ClasesArrayAdapter(this, R.layout.list_classes_item, EnumClassType.values());
@@ -40,17 +42,21 @@ public class SelectorClaseActivity extends AppCompatActivity implements AdapterV
 
         //evento de cambio de clase
         spinnerClases.setOnItemSelectedListener(this);
+        if(claseSeleccionada!=null)
+            spinnerClases.setSelection(claseSeleccionada.getId());
 
         //evento del boton continuar termina la actividad
         btnClaseContinuar.setOnClickListener((view) -> {
 
                         Intent miIntent=new Intent();
-                        miIntent.putExtra("SELECCION",claseSeleccionada);
+                        miIntent.putExtra("CLASE_SELECCIONADA",claseSeleccionada);
                         setResult(RESULT_OK,miIntent);
                         finish();
 
         });
     }
+
+
 
     /**
      * Gestion de spinner de clase. Segun el indice i recoge el valor de EnumClassType
@@ -58,7 +64,7 @@ public class SelectorClaseActivity extends AppCompatActivity implements AdapterV
      */
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        ImageView iconoClase = findViewById(R.id.imagenIcono);
+        ImageView iconoClase = findViewById(R.id.imagenIconoClase);
         claseSeleccionada=EnumClassType.values()[i];
         iconoClase.setImageResource(EnumClassType.values()[i].getImagen());
     }

@@ -19,30 +19,14 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fondo2" />
 
-    <TextView
-        android:id="@+id/tituloSeccion"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="#CC001926"
-        android:fontFamily="@font/meat"
-        android:padding="10dp"
-        android:text="@string/selecciona_clase"
-        android:textAlignment="center"
-        android:textColor="@color/primario_light"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
-        android:id="@+id/imagenIcono"
+        android:id="@+id/imagenIconoClase"
         android:layout_width="251dp"
         android:layout_height="236dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnElegirClase"
+        app:layout_constraintTop_toTopOf="@+id/imagenfondo"
         app:tint="@color/primario" />
 
     <TextView
@@ -115,12 +99,12 @@
     <Button
         android:id="@+id/btnElegirClase"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Elegir clase"
+        android:layout_height="61dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/selecciona_clase"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tituloSeccion" />
+        app:layout_constraintTop_toBottomOf="@+id/lbNombreClase" />
 
     <TextView
         android:id="@+id/lbNombreClase"
@@ -131,7 +115,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imagenfondo"
-        app:layout_constraintTop_toBottomOf="@+id/imagenIcono" />
+        app:layout_constraintTop_toBottomOf="@+id/imagenIconoClase" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
