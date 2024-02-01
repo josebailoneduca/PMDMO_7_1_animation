@@ -8,6 +8,8 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -42,7 +44,8 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
      */
     private Personaje personaje;
     ActivityResultLauncher<EnumClassType> lanzadorSelectorClase;
-
+    Animation entradaBtn;
+    Animation salidaBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +62,12 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
                 (result) -> {
                     manejarResultadoAcitivityClase(result);
                 });
+
+        Animation entradaBtn = AnimationUtils.loadAnimation(
+                this, R.anim.entradaboton);
+        Animation salidaBtn = AnimationUtils.loadAnimation(
+                this, R.anim.salidaboton);
+        btnInicio.startAnimation(entradaBtn);
     }
 
 
@@ -90,7 +99,8 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
         //radiobuttons de genero
         radioGroupGenero.clearCheck();
         btnClaseContinuar.setEnabled(false);
-
+        btnClaseContinuar.startAnimation(AnimationUtils.loadAnimation(
+                this, R.anim.salidaboton));
         //evento de cambio de clase
         btnElegirClase.setOnClickListener(view ->{
             lanzadorSelectorClase.launch(personaje.getClase());
@@ -99,8 +109,13 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
 
         //evento de cambio de genero
         radioGroupGenero.setOnCheckedChangeListener((radioGroup, i) -> {
-            if (radioGroupGenero.getCheckedRadioButtonId() != -1)
+            if (radioGroupGenero.getCheckedRadioButtonId() != -1) {
+                btnClaseContinuar.startAnimation(AnimationUtils.loadAnimation(
+                        this, R.anim.entradaboton));
                 btnClaseContinuar.setEnabled(true);
+
+            }
+
         });
 
         //evento del boton continuar
@@ -167,9 +182,16 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
             //actualizacion de interface
             actualizarEtiquetasStats();
             lbValTiradas.setText("" + personaje.getIntentosStatsAzar());
-            if (tiradasRestantes == 0)
+            if (tiradasRestantes == 0) {
                 btnLanzarDados.setEnabled(false);
-            btnContinuar.setEnabled(true);
+                btnLanzarDados.startAnimation(AnimationUtils.loadAnimation(
+                        this, R.anim.salidaboton));
+            }
+            if (!btnContinuar.isEnabled()) {
+                btnContinuar.setEnabled(true);
+                btnContinuar.startAnimation(AnimationUtils.loadAnimation(
+                        this, R.anim.entradaboton));
+            }
         });
 
         //boton continuar a siguiente pantalla
@@ -267,7 +289,10 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
                 btn.setColorFilter(R.color.black);
             }
             //habilitar el boton de continuar ala pantalla siguiente
-            findViewById(R.id.btnStatsManualContinuar).setEnabled(true);
+            Button cont = findViewById(R.id.btnStatsManualContinuar);
+            cont.setEnabled(true);
+            cont.startAnimation(AnimationUtils.loadAnimation(
+                    this, R.anim.entradaboton));
         }
     }
 
@@ -387,6 +412,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
 
         //boton de continuar a pantalla siguiente
         Button btnRasgosContinuar = findViewById(R.id.btnRasgosContinuar);
+        btnRasgosContinuar.setEnabled(false);
         btnRasgosContinuar.setOnClickListener(view -> verFichaDePersonaje());
 
     }
@@ -443,14 +469,24 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
                     btnRasgo.setTextColor(getColor(R.color.rojo_oscuro));
                 }
             }
-
-            findViewById(R.id.btnRasgosContinuar).setEnabled(true);
+            Button but = findViewById(R.id.btnRasgosContinuar);
+            if (!but.isEnabled()){
+                but.startAnimation(AnimationUtils.loadAnimation(
+                        this, R.anim.entradaboton));
+            but.setEnabled(true);
+            }
             //en caso de que no sean 3 loas activaos entonces los habilitamos todos
         } else {
             for (CheckBox btnRasgo : btnRasgos) {
                 btnRasgo.setEnabled(true);
+
             }
-            findViewById(R.id.btnRasgosContinuar).setEnabled(false);
+            Button but2 = findViewById(R.id.btnRasgosContinuar);
+            if (but2.isEnabled()) {
+                but2.startAnimation(AnimationUtils.loadAnimation(
+                        this, R.anim.salidaboton));
+                findViewById(R.id.btnRasgosContinuar).setEnabled(false);
+            }
         }
     }
 
